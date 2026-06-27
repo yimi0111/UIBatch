@@ -60,7 +60,7 @@ namespace UIBatch
         /// <summary>
         /// 获取 Mask UnMask DC（popMaterial[0]）的材质 InstanceID
         /// </summary>
-        public static int GetMarterIalIDUnmask(ICanvasElement canvasElement)
+        public static int GetMaterialIDUnmask(ICanvasElement canvasElement)
         {
             var canvasRender = canvasElement.transform.GetComponent<CanvasRenderer>();
             if (canvasRender.popMaterialCount > 0)
@@ -152,14 +152,14 @@ namespace UIBatch
             var canvasrender2 = trm2.gameObject.GetComponent<CanvasRenderer>();
             if (canvasrender1 == null || canvasrender2 == null)
                 return false;
-            var mesh1 = GetGrphicMesh(canvasrender1.transform.GetComponent<Graphic>());
-            var mesh2 = GetGrphicMesh(canvasrender2.transform.GetComponent<Graphic>());
+            var mesh1 = GetGraphicMesh(canvasrender1.transform.GetComponent<Graphic>());
+            var mesh2 = GetGraphicMesh(canvasrender2.transform.GetComponent<Graphic>());
             return MeshOverlaps(mesh1, trm1, mesh2, trm2);
         }
 
         static List<Vector3> temp = new List<Vector3>(128);
         static List<int> ints = new List<int>(128);
-        public static Mesh GetGrphicMesh(Graphic graphic)
+        public static Mesh GetGraphicMesh(Graphic graphic)
         {
             if (graphic == null) return null;
             var mesh = new Mesh();

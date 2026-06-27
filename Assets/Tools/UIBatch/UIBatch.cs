@@ -72,7 +72,7 @@ namespace UIBatch
         public string breakReasonDetail;
     }
 
-    public static class UIBatctEditor
+    public static class UIBatchEditor
     {
         [MenuItem("UITool/UIBatch")]
         public static void UIBatchDebug()
@@ -133,7 +133,7 @@ namespace UIBatch
                 if (item.transform.GetComponent<Mask>().enabled == false)
                     item.depth = -1;
                 var graphic = item.transform.GetComponent<Graphic>();
-                item.materialID = UIBatchTool.GetMarterIalIDUnmask(graphic);
+                item.materialID = UIBatchTool.GetMaterialIDUnmask(graphic);
                 item.textureID = UIBatchTool.GetTextureID(graphic);
                 FillExtendedBatchKey(item, graphic);
             }
